@@ -15,7 +15,7 @@ controller.save = function (req, res) {
 	notes.save().then(
 		(savedDocument) => {
 			console.log({savedDocument}, "Your notes has been saved.");
-			res.send(savedDocument);
+			res.status(200).send(savedDocument);
 		},
 		(err) => {
 			console.error ({err, dataReceived}, 'error saving document');
