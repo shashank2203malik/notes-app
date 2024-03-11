@@ -1,0 +1,16 @@
+.button-container {
+	border: 1px solid black;
+	height: 890px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	margin-right: 20px;
+	width: 200px;
+	height: 100px;
+	font-size: 20px;
+	cursor: pointer;
+}
+

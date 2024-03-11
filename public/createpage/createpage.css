@@ -1,0 +1,45 @@
+
+.textarea1 {
+	width: 60%;
+	height: 40px;
+	resize: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	font-size: 30px;
+	color: deeppink;
+}
+
+.textarea2 {
+	width: 80%;
+	height: 60%;
+	resize: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 15px;
+	font-family: revert;
+	color: black;
+}
+
+.button-container {
+	display: block;
+}
+
+#save {
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	cursor: pointer;
+	margin-left: 82%;
+}
+
+#goHome {
+	width: 200px;
+	height: 50px;
+	font-size: 20px;
+	cursor: pointer;
+	margin-left: 42%;
+	margin-top: 30px;
+}
