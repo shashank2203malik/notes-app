@@ -1,12 +1,9 @@
-const express = require("express");
-const path    = require("path");
-const mongoose = require("mongoose"); 
-
+const express    = require("express");
+const path       = require("path");
+const notesModel = require ("./models/notes");
 
 const app = express ();
 const PORT = 3001;
-
-
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -35,7 +32,7 @@ app.post("/data", function(req, res) {
 		return;
 	}
 
-	const notes = new myModel(dataReceived);
+	const notes = new notesModel(dataReceived);
 
 	notes.save().then(
 		(savedDocument) => {
@@ -43,7 +40,7 @@ app.post("/data", function(req, res) {
 			res.send(savedDocument);
 		},
 		(err) => {
-			console.error ({err, dataReceived}, 'error saving document')
+			console.error ({err, dataReceived}, 'error saving document');
 			res.status (500).send ({message : "Internal Server Error"});
 		}
 	);
@@ -57,23 +54,3 @@ app.listen (PORT, function(err) {
 	}
 	console.log("server has started");
 });
-
-
-
-mongoose.connect("mongodb://localhost:27017/meradatabase"); 
-
-const db = mongoose.connection; 
- 
-db.on("error", console.error.bind(console, "connection error")); 
-db.once("open", function(callback) { 
-	console.log("Connection succeeded."); 
-}); 
- 
-const Schema = mongoose.Schema; 
- 
-const noteSchema = new Schema({ 
-	noteHeading: String, 
-	noteStuff: String  
-}); 
- 
-const myModel = mongoose.model("Notes", noteSchema); 
