@@ -1,4 +1,4 @@
-window.addEventListener("load", function(event) {
+window.addEventListener("load", function(/*event*/) {
 	main ();
 });
 
@@ -14,11 +14,11 @@ function eventHandler() {
 	saveButton.addEventListener("click", onClickSave);
 }
 
-function onClickHome(ev) {
+function onClickHome(/*ev*/) {
 	window.location.href = "/";
 }
 
-function onClickSave(ev) {
+function onClickSave(/*ev*/) {
 	const textArea1 = document.querySelector(".textarea1").value;
 	const textArea2 = document.querySelector(".textarea2").value;
 
@@ -27,7 +27,7 @@ function onClickSave(ev) {
 		noteStuff:   textArea2
 	};
 
-	fetch("/data", {
+	fetch("/notes/save", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
